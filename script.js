@@ -19,3 +19,11 @@ else if (isEvening)
   {
   hiMessage.textContent = "Good evening!";
   }
+
+  localStorage.setItem("It's a secret to everybody", "I am poor student during the day,but during the night I am Batman!") ;
+  const secret = localStorage.getItem("It's a secret to everybody");
+  if (secret) {
+    console.log(secret);
+  } else {
+    console.log("No secret found in localStorage.");
+  }
