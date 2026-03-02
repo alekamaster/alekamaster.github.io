@@ -27,3 +27,43 @@ else if (isEvening)
   } else {
     console.log("No secret found in localStorage.");
   }
+
+
+  const input= document.querySelector('#new-todo')
+  const button= document.querySelector('#add-btn')
+  const todoList= document.querySelector('.todo-list')
+
+
+
+// Add a new item to the list
+const renderTodos = ()=>{
+  const todos =
+  JSON.parse(localStorage.getItem("todo-list")) || []
+
+// Clear the li's before we recreate them
+todoList.innerHTML = "";
+
+todos.forEach(todo=> {
+  const li = document.createElement('li')
+  li.textContent = todo.text
+  todoList.append(li)
+})
+}
+
+button.addEventListener("click",()=>{
+  const todos = JSON.parse(localStorage.getItem("todo-list")) || []
+ 
+  if (input.value.trim() === "") return
+
+  todos.push({
+    text: input.value,
+    completed: false
+  })
+
+    
+localStorage.setItem("todo-list", JSON.stringify(todos))
+  input.value = ""
+  renderTodos()
+})
+
+renderTodos()
