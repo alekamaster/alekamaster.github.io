@@ -66,16 +66,6 @@ setInterval(() => {
     showImages()
 }, 5000)
 
-
-
-
-
-  const input= document.querySelector('#new-todo')
-  const button= document.querySelector('#add-btn')
-  const todoList= document.querySelector('.todo-list')
-
-
-
 // Add a new item to the list
 const renderTodos = ()=>{
   const todos =
