@@ -1,51 +1,61 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Modern Java</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet'  href='styles.css'>
-    
-</head>
-<body>
-    <div id="welcome"></div>
-       <section id="intro">
-           <h1>Welcome to Modern Java!</h1>
-    
-           <h3>My Name is Alex and this is a work in progress.</h3>
-            <img src="Img/20230128141605_IMG_0365.jpg" alt="Photo of Alex" width="300" height="400" >
-        </section>
-    
-    
+h1{
+    color: #8e2727;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #98d9d9;
+    margin: 0;
+    padding: 0;
+    text-shadow: 345px 2px 4px #aaa;
 
-<!-- Add more sections as needed -->
-    <section id="about">
-        <h2>About Me</h2>
-    
-        <p> I am a student of software developer program, An Army reservist, photographer, and Nurse Aide (CNA)</p>
-        <p> This website is dedicated to sharing my journey and projects in the world of Java.</p>
-    </section>
-     <!-- Carousel Section -->
-    <div id="carousel">
-       <img alt="Image 1">
-       <img alt="Image 2">
-      <img alt="Image 3">
-     </div>
-    <div id="buttons">
-       <button id="prev">Previous</button>
-       <button id="next">Next</button>
-    </div>
+}
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #5f41f6;
+    color: rgb(136, 22, 22);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+ /* Styles for the image carousel */
+#carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 300px;
+    overflow: hidden;
+    gap: 10px;
+}
 
-    <!-- placeholder text to better and future content -->
-    <div id="project-section">
-        <h2>Projects</h2>
-        <p>Here are some of the projects I've been working on:</p>
-        </div>
-        <!-- placeholder ends -->
-    <footer>
-        <p>&copy; 2023 Alex's Modern Java Journey</p>
-    </footer>
-    <script src='script.js'></script>
-</body>
-</html>
+#carousel img {
+    max-height: 300px;
+    aspect-ratio: auto 300 / 400;
+    border-radius: 10px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
