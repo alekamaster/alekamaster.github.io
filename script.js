@@ -85,7 +85,7 @@ todos.forEach(todo=> {
   li.textContent = todo.text
   todoList.append(li)
 })
-}
+};
 
 button.addEventListener("click",()=>{
   const todos = JSON.parse(localStorage.getItem("todo-list")) || []
@@ -103,4 +103,26 @@ localStorage.setItem("todo-list", JSON.stringify(todos))
   renderTodos()
 })
 
-renderTodos()
+renderTodos();
+
+
+//getting pokemon data from pokeapi
+const pokemonContainer = document.querySelector('#pokemon-container');
+const getRandomPokemon = async () => {
+  const url = 'https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random() * 150);
+  const response = await fetch(url);
+  const pokemonobject = await response.json();
+  return pokemonobject;
+};
+
+//rendering image
+const renderPokemon = (pokemon) => {
+  const img = document.createElement('img');
+  img.src = pokemon.sprites.front_default;
+  img.alt = pokemon.name;
+  pokemonContainer.append(img);
+};
+;(async () => {
+  const fetchedPokemon = await getRandomPokemon();
+  renderPokemon(fetchedPokemon);
+})();
